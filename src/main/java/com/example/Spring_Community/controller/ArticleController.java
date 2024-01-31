@@ -13,7 +13,7 @@ public class ArticleController {
     @Autowired // 스프링 부트가 미리 생성해놓은 리파지터리 객체를 주입(DI:의존성 주입)
     private ArticleRepository articleRepository;
 
-    @GetMapping("/articles/new")
+    @GetMapping("/articles")
     public String newArticleForm() {
         return "articles/new";
     }
