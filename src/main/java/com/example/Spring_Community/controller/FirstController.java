@@ -15,11 +15,11 @@ public class FirstController {
     public String niceToMeetYou(Model model) {
         // 모델 객체의 username 변수에 값을 넣어줌
         model.addAttribute("username", "hongpark");
-        return "greetings"; // greetings.mustache 파일 반환
+        return "first/greetings"; // greetings.mustache 파일 반환
     }
     @GetMapping("/bye")
     public String seeYouNext(Model model) {
         model.addAttribute("nickname", "HongPark");
-        return "goodbye";
+        return "first/goodbye";
     }
 }
