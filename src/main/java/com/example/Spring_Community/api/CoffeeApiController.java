@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 public class CoffeeApiController {
@@ -36,7 +37,7 @@ public class CoffeeApiController {
         Coffee coffee = dto.toEntity();
         Coffee target = coffeeRepository.findById(id).orElse(null);
 
-        if(target == null || target.getId() != coffee.getId())
+        if(target == null || !Objects.equals(target.getId(), coffee.getId()))
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
         target.patch(coffee);
