@@ -21,7 +21,10 @@ public class Coffee {
     private Integer price;
 
     public void patch(Coffee coffee) {
-        this.name = coffee.name;
-        this.price = coffee.price;
+        if(coffee.getName() != null)
+            this.name = coffee.name;
+
+        if(coffee.getPrice() != null)
+            this.price = coffee.price;
     }
 }
